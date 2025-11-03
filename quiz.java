@@ -21,6 +21,8 @@ public class quiz {
         System.out.flush();
 
         while (continuar) {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
             System.out.println(BOLD + YELLOW + "Bem-vindo ao Quiz de Trânsito!" + RESET);
             System.out.print("Digite o nome do jogador: ");
             String nome = leia.nextLine();
@@ -39,6 +41,11 @@ public class quiz {
 
                 if (resposta.equalsIgnoreCase("n")) {
                     System.out.println(RED + "Use um nome diferente, nomes repetidos não são permitidos!" + RESET);
+                    try {
+    Thread.sleep(3000);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
                     continue;
                 } else {
                     System.out.println(YELLOW + "Beleza, vamos continuar com o mesmo jogador!" + RESET);
