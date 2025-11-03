@@ -44,6 +44,19 @@ public class quiz {
                     System.out.println(YELLOW + "Beleza, vamos continuar com o mesmo jogador!" + RESET);
                 }
             }
+            System.out.print("Prepare-se");
+try {
+    Thread.sleep(1000); // espera 1 segundo
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+System.out.println("...");
+try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+System.out.println("Vamos começar!");
             System.out.println(BLUE + "--- Nível Fácil ---" + RESET);
             System.out.println("1 - Qual a velocidade máxima permitida em uma via urbana?");
             System.out.println("a) 40 km/h");
@@ -68,7 +81,7 @@ public class quiz {
             System.out.println("e) Retorno");
             String resposta2 = leia.nextLine();
             if (resposta2.equalsIgnoreCase("b")) {
-                pontos += 105;
+                pontos += 15;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
             } else {
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
