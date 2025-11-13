@@ -41,37 +41,30 @@ public class quiz {
 
                 if (resposta.equalsIgnoreCase("n")) {
                     System.out.println(RED + "Use um nome diferente, nomes repetidos não são permitidos!" + RESET);
-                    try {
-    Thread.sleep(3000);
-} catch (InterruptedException e) {
-    e.printStackTrace();
-}
+                    esperar(3000);
                     continue;
                 } else {
                     System.out.println(YELLOW + "Beleza, vamos continuar com o mesmo jogador!" + RESET);
                 }
             }
+
             System.out.print("Prepare-se");
-try {
-    Thread.sleep(1000); // espera 1 segundo
-} catch (InterruptedException e) {
-    e.printStackTrace();
-}
-System.out.println("...");
-try {
-    Thread.sleep(1000);
-} catch (InterruptedException e) {
-    e.printStackTrace();
-}
-System.out.println("Vamos começar!");
+            esperar(1000);
+            System.out.println("...");
+            esperar(1000);
+            System.out.println("Vamos começar!");
+            esperar(800);
+
+            // ======== Nível Fácil ========
             System.out.println(BLUE + "--- Nível Fácil ---" + RESET);
+
             System.out.println("1 - Qual a velocidade máxima permitida em uma via urbana?");
             System.out.println("a) 40 km/h");
             System.out.println("b) 70 km/h");
             System.out.println("c) 60 km/h");
             System.out.println("d) 80 km/h");
             System.out.println("e) 100 km/h");
-            String resposta1 = leia.nextLine();
+            String resposta1 = lerAlternativa(leia);
             if (resposta1.equalsIgnoreCase("c")) {
                 pontos += 15;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -79,6 +72,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("2 - O que significa uma placa de trânsito com um triângulo invertido?");
             System.out.println("a) Pare");
@@ -86,7 +80,7 @@ System.out.println("Vamos começar!");
             System.out.println("c) Proibido estacionar");
             System.out.println("d) Sentido proibido");
             System.out.println("e) Retorno");
-            String resposta2 = leia.nextLine();
+            String resposta2 = lerAlternativa(leia);
             if (resposta2.equalsIgnoreCase("b")) {
                 pontos += 15;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -94,15 +88,18 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
+            // ======== Nível Médio ========
             System.out.println(BLUE + "--- Nível Médio ---" + RESET);
+
             System.out.println("3 - Qual a distância mínima que um veículo deve manter ao estacionar próximo a uma esquina?");
             System.out.println("a) 3 metros");
             System.out.println("b) 5 metros");
             System.out.println("c) 7 metros");
             System.out.println("d) 10 metros");
             System.out.println("e) 15 metros");
-            String resposta3 = leia.nextLine();
+            String resposta3 = lerAlternativa(leia);
             if (resposta3.equalsIgnoreCase("b")) {
                 pontos += 20;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -110,6 +107,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("4 - Em uma via com várias faixas de trânsito no mesmo sentido, qual faixa deve ser utilizada para ultrapassagem?");
             System.out.println("a) Faixa da direita");
@@ -117,7 +115,7 @@ System.out.println("Vamos começar!");
             System.out.println("c) Faixa da esquerda");
             System.out.println("d) Qualquer faixa");
             System.out.println("e) Nenhuma faixa");
-            String resposta4 = leia.nextLine();
+            String resposta4 = lerAlternativa(leia);
             if (resposta4.equalsIgnoreCase("c")) {
                 pontos += 20;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -125,15 +123,18 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
+            // ======== Nível Difícil ========
             System.out.println(BLUE + "--- Nível Difícil ---" + RESET);
+
             System.out.println("5 - Qual é a penalidade para um motorista que dirige sob a influência de álcool com concentração igual ou superior a 0,6 mg/l de ar expelido?");
             System.out.println("a) Multa e suspensão do direito de dirigir");
             System.out.println("b) Apenas multa");
             System.out.println("c) Apenas suspensão");
             System.out.println("d) Advertência");
             System.out.println("e) Nenhuma penalidade");
-            String resposta5 = leia.nextLine();
+            String resposta5 = lerAlternativa(leia);
             if (resposta5.equalsIgnoreCase("a")) {
                 pontos += 30;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -141,6 +142,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("6 - Qual é a distância mínima que um veículo deve manter ao seguir outro veículo em uma via urbana?");
             System.out.println("a) 1 segundo");
@@ -148,7 +150,7 @@ System.out.println("Vamos começar!");
             System.out.println("c) 3 segundos");
             System.out.println("d) 4 segundos");
             System.out.println("e) 5 segundos");
-            String resposta6 = leia.nextLine();
+            String resposta6 = lerAlternativa(leia);
             if (resposta6.equalsIgnoreCase("c")) {
                 pontos += 30;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -156,15 +158,18 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
+            // ======== Estudo de Casos ========
             System.out.println(PURPLE + "--- Estudo de Casos ---" + RESET);
+
             System.out.println("7 - João foi à padaria e foi atropelado por uma moto que avançou o sinal vermelho. João não atravessava na faixa. Quais penalidades cada um sofrerá?");
             System.out.println("a) João: advertência verbal / Motoqueiro: multa leve");
             System.out.println("b) João: multa leve / Motoqueiro: multa grave e suspensão");
             System.out.println("c) João: advertência de segurança / Motoqueiro: multa gravíssima e suspensão");
             System.out.println("d) João: isento / Motoqueiro: advertência verbal");
             System.out.println("e) João: multa grave / Motoqueiro: multa leve");
-            String resposta7 = leia.nextLine();
+            String resposta7 = lerAlternativa(leia);
             if (resposta7.equalsIgnoreCase("c")) {
                 pontos += 40;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -172,6 +177,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("8 - Pedro fez ultrapassagem em faixa contínua e quase colidiu. Qual penalidade?");
             System.out.println("a) Multa leve");
@@ -179,7 +185,7 @@ System.out.println("Vamos começar!");
             System.out.println("c) Multa gravíssima e suspensão");
             System.out.println("d) Advertência");
             System.out.println("e) Nenhuma penalidade");
-            String resposta8 = leia.nextLine();
+            String resposta8 = lerAlternativa(leia);
             if (resposta8.equalsIgnoreCase("c")) {
                 pontos += 40;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -187,6 +193,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("9 - Um motorista estacionou em vaga exclusiva para ambulâncias. Penalidade?");
             System.out.println("a) Multa leve");
@@ -194,7 +201,7 @@ System.out.println("Vamos começar!");
             System.out.println("c) Multa gravíssima e remoção");
             System.out.println("d) Advertência");
             System.out.println("e) Nenhuma penalidade");
-            String resposta9 = leia.nextLine();
+            String resposta9 = lerAlternativa(leia);
             if (resposta9.equalsIgnoreCase("c")) {
                 pontos += 40;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
@@ -202,6 +209,7 @@ System.out.println("Vamos começar!");
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
             System.out.println(GREEN + "Pontos atuais: " + pontos + RESET);
+            esperar(800);
 
             System.out.println("10 - Um motorista abriu a porta do carro e derrubou um ciclista. Quem cometeu infração?");
             System.out.println("a) Apenas o ciclista");
@@ -209,15 +217,15 @@ System.out.println("Vamos começar!");
             System.out.println("c) Ambos");
             System.out.println("d) Nenhum");
             System.out.println("e) Apenas o motorista (advertência)");
-            String resposta10 = leia.nextLine();
+            String resposta10 = lerAlternativa(leia);
             if (resposta10.equalsIgnoreCase("b")) {
                 pontos += 40;
                 System.out.println(GREEN + "  Resposta correta!" + RESET);
             } else {
                 System.out.println(RED + "  Resposta incorreta!" + RESET);
             }
+
             ranking.put(nome, pontos);
-            
             mostrarRanking(ranking);
 
             System.out.print("\nDeseja jogar novamente?, pode ser mais de uma pessoa (s/n): ");
@@ -228,7 +236,7 @@ System.out.println("Vamos começar!");
         System.out.println(CYAN + "Quiz encerrado. Obrigado por jogar!" + RESET);
         leia.close();
     }
-    // Modo administrador
+
     private static void modoAdmin(Scanner leia, Map<String, Integer> ranking) {
         boolean adminContinuar = true;
 
@@ -237,6 +245,7 @@ System.out.println("Vamos começar!");
             System.out.println("1 - Ver ranking completo");
             System.out.println("2 - Adicionar ou editar jogador");
             System.out.println("3 - Sair do modo admin");
+            System.out.println("4 - Ver gabarito e créditos");
             System.out.print("Escolha uma opção: ");
             String opcaoAdmin = leia.nextLine();
 
@@ -264,9 +273,14 @@ System.out.println("Vamos começar!");
                 }
                 case "3" -> {
                     adminContinuar = false;
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+                    System.out.print("\033[H\033[2J");
+                    System.out.flush();
                 }
+                case "4" -> {respostasCred();
+                    
+                }
+                    
+                
                 default -> System.out.println(RED + "Opção inválida!" + RESET);
             }
         }
@@ -292,5 +306,45 @@ System.out.println("Vamos começar!");
             System.out.println(cor + posicao + "º " + entry.getKey() + " - " + pontos + " pontos" + RESET);
             posicao++;
         }
+    }
+
+    // Espera padronizada
+    private static void esperar(int ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    // Garante resposta válida (a–e)
+    private static String lerAlternativa(Scanner leia) {
+        String resposta;
+        while (true) {
+            System.out.print("Sua resposta: ");
+            resposta = leia.nextLine().trim().toLowerCase();
+            if (resposta.matches("[a-e]")) {
+                break;
+            }
+            System.out.println(RED + "Opção inválida! Digite apenas de 'a' a 'e'." + RESET);
+        }
+        return resposta;
+    }
+    private static void respostasCred(){
+        System.out.print("""
+        1) c 
+        2) b 
+        3) b 
+        4) c 
+        5) a 
+        6) c 
+        7) c 
+        8) c
+        9) c 
+        10) b \n""");
+        System.out.print("""
+        Créditos:
+        Nikolas Ayres 
+        Filipe Bicudo \n """);
     }
 }
